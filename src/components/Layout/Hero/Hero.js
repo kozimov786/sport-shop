@@ -19,6 +19,8 @@ const HeroWrapper = styled.div`
   padding-top: 258px;
   background: linear-gradient(180deg, #000000 -73.06%, rgba(0, 0, 0, 0) 100%),
                url(${BgHero});
+  background-repeat: no-repeat;
+  background-position: center center;
   h1{
     font-weight: bold;
     font-size: 64px;

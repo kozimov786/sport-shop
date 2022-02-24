@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { HiOutlineShoppingCart } from 'react-icons/hi'
-
-import StarFull from '../../image/star-yellow.png';
-import StarNone from '../../image/star-gray.png';
+import Review from '../Review';
 
 export default function Product({ item }) {
 
@@ -15,13 +13,17 @@ export default function Product({ item }) {
       <div className="card__info">
         <a className='card__link' href="/">
           <h3 className='card__title'>{item.name}</h3>
+          <div className='card__overlay'>
+            <a href="/">
+              <AiOutlineHeart color='#33A0FF' size={20} />
+            </a>
+            <a href="/">
+              <HiOutlineShoppingCart color='#33A0FF' size={20} />
+            </a>
+          </div>
         </a>
-        <div className='card__review'>
-          <img src={StarFull} alt="start" />
-          <img src={StarFull} alt="start" />
-          <img src={StarFull} alt="start" />
-          <img src={StarFull} alt="start" />
-          <img src={StarNone} alt="start" />
+        <div className="card__review" >
+          <Review />
         </div>
         <div className='card__price'>
           <span className='cost'>$ {item.cost}</span>
@@ -30,14 +32,7 @@ export default function Product({ item }) {
         </div>
 
       </div>
-      <div className='card__overlay'>
-        <a href="/">
-          <AiOutlineHeart color='#33A0FF' size={20} />
-        </a>
-        <a href="/">
-          <HiOutlineShoppingCart color='#33A0FF' size={20} />
-        </a>
-      </div>
+
     </Card>
   )
 }
@@ -51,13 +46,20 @@ const Card = styled.div`
  text-align: center;
  overflow: hidden;
  border-radius: 10px;
- .card__overlay{
+ position: relative;
+
+
+
+
+.card__overlay{
    width: 280px;
    position: absolute;
    top: 38px;
    left: 10px;
+   z-index: 999;
    height: 200px;
    background-color: rgba(255, 255, 255, 0.95);
+   display: none;
    a{
      margin: 0 5px;
      width: 51px;
@@ -68,16 +70,21 @@ const Card = styled.div`
      justify-content: center;
      align-items: center;
     }
-    display: none;
  }
-
- .card__link:hover + .card__overlay{
-
-  display: flex;
-}
-
-
-
+ .card__link::after{
+   content: '';
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+ }
+ .card__link:hover .card__overlay{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
  img{
    object-fit: fill;
  }
@@ -85,12 +92,8 @@ const Card = styled.div`
    background-color: #fff;
    padding: 16px 40px;
  }
- .card__review{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   img:not(:last-child){
-     margin-right: 13px;
-   }
- }
+.card__review{
+  width: 130px;
+  margin: 0 auto;
+}
 `
