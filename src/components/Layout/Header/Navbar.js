@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import LogoImg from '../../../image/logo.svg';
 import HomeDropdown from './HomeDropdown';
@@ -8,9 +9,9 @@ export default function Navbar() {
   return (
     <Content>
       <div className="container navbar__container">
-        <div className="logo">
+        <Link to='/'>
           <img src={LogoImg} alt="logo" width={134} height={44} />
-        </div>
+        </Link>
         <Nav>
           <ul>
             <li className='nav__home'>

@@ -7,11 +7,11 @@ export default function Article() {
   return (
     <Wrapper>
       <div className="container article__container">
-        <Info>
+        <div className='article__info'>
           <h2>Adidas Men Running Sneakers</h2>
           <p>Performance and design. Taken right to the edge.</p>
           <a href='/'>SHOP NOW</a>
-        </Info>
+        </div>
         <img className='article__img' src={adidasImg} alt="adidas" />
       </div>
     </Wrapper>
@@ -20,22 +20,21 @@ export default function Article() {
 
 const Wrapper = styled.div`
  background-color: var(--blue);
- padding-top: 162px;
- padding-bottom: 162px;
+
  .article__container{
    display: flex;
    align-items: center;
    position: relative;
+   padding-top: 162px;
+   padding-bottom: 162px;
  }
  .article__img{
    position: absolute;
    top: -260px;
    right: -80px;
  }
-`
-
-const Info = styled.div`
-width: 592px;
+ .article__info{
+  width: 592px;
 color: #fff;
  h2{
   font-weight: 500;
@@ -66,5 +65,6 @@ color: #fff;
 transition: all .3s ease-in;
 
   }
+ }
  }
 `

@@ -22,19 +22,19 @@ padding-bottom: 95px;
    input{
      border: none;
      border: 2px solid #BCDDFE;
+     border-right-color:#40BFFF ;
      background-color: #fff;
      padding: 22px;
      flex: 1;
    }
    button{
-  padding: 13px 23px;
+  padding: 17px 27px;
   border: none;
   font-weight: 600;
     font-size: 20px;
     line-height: 30px;
     color: #fff;
     background-color: #40BFFF;
-    border: 2px solid #40BFFF;
    }
  }
 `

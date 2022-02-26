@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export default function HomeDropdown() {
   return (
@@ -49,7 +50,7 @@ export default function HomeDropdown() {
           <div className='nav__menu'>
             <ul>
               <li>
-                <a href="/">HOT DEAL</a>
+                <Link to="/hot-deal">HOT DEAL</Link>
               </li>
               <li>
                 <a href="/">Sunglasses</a>
@@ -66,7 +67,8 @@ export default function HomeDropdown() {
             </ul>
             <ul>
               <li>
-                <a href="/">HOT DEAL</a>
+                <Link to="/hot-deal">HOT DEAL</Link>
+
               </li>
               <li>
                 <a href="/">Sunglasses</a>
@@ -88,7 +90,8 @@ export default function HomeDropdown() {
           <div className='nav__menu'>
             <ul>
               <li>
-                <a href="/">HOT DEAL</a>
+                <Link to="/hot-deal">HOT DEAL</Link>
+
               </li>
               <li>
                 <a href="/">Sunglasses</a>
