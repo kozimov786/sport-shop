@@ -3,8 +3,13 @@ import styled from 'styled-components'
 import { AiFillCaretDown, AiOutlineSearch } from "react-icons/ai";
 import { FaRegUser } from 'react-icons/fa'
 import { FiShoppingCart } from 'react-icons/fi'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function Topbar() {
+  const itemsQuantity = useSelector(state => state.ui.cartItems)
+
+
   return (
     <Content>
       <div className="container topbar__container">
@@ -24,10 +29,12 @@ export default function Topbar() {
             <FaRegUser size={20} />
             <span>My Profile</span>
           </div>
-          <div className='topbar__card'>
-            <FiShoppingCart size={20} />
-            <span className='topbar__card--badge'>2</span>
-          </div>
+          <Link to='/cart'>
+            <div className='topbar__card'>
+              <FiShoppingCart size={20} />
+              <span className='topbar__card--badge'>{itemsQuantity && itemsQuantity.length}</span>
+            </div>
+          </Link>
           <p className='topbar__items'>Items</p>
           <p className='topbar__cost'>$0.00</p>
           <button className='topbar__search'>
@@ -115,5 +122,15 @@ color: var(--light-black);
    cursor: pointer;
    background-color: transparent;
    padding: 0;
+ }
+ @media only screen and (max-width:530px) {
+   .topbar__profile span,
+   .topbar__items,
+   .topbar__cost{
+     display: none;
+   }
+  .topbar__search{
+    margin-left: 20px;
+  }
  }
 `

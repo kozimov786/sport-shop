@@ -157,6 +157,13 @@ font-family: var(--Nova);
   .footer__facebook{
     margin-right: 40px;
   }
+  @media screen and (max-width:750px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    .footer__info,.footer__follow,.footer__contact{
+    margin: 20px;
+  }
+  }
 `
 
 const FooterMenu = styled.div`
@@ -185,6 +192,13 @@ transition: color .3s ease-in-out;
     color: var(--primary-red);
   }
   }
+  @media screen and (max-width:750px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    .flex{
+      margin: 20px;
+    }
+  }
 `
 
 const FooterBottom = styled.div`
@@ -207,4 +221,14 @@ line-height: 17px;
 color: #C1C8CE;
 margin-bottom: 0;
 }
+@media screen and (max-width:750px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    p{
+      text-align: center;
+    }
+    div{
+      margin-top: 30px;
+    }
+  }
 `

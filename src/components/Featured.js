@@ -63,10 +63,19 @@ const Wrapper = styled.div`
 const FeaturedList = styled.ul`
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width:1200px ) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `
 const FeaturedItem = styled.ul`
   display: flex;
-
+  @media screen and (max-width:1200px ) {
+    margin: 20px;
+  }
+  @media screen and (max-width:500px ) {
+    flex-direction: column;
+  }
 `
 
 const Info = styled.div`
@@ -86,5 +95,9 @@ margin-bottom: 16px;
   }
   .featured__cost{
     color: var(--primary-red);
+  }
+  @media screen and (max-width:500px ) {
+    margin-left: 0;
+    padding: 20px;
   }
 `

@@ -2,73 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Product from './Product';
 
-export default function Products() {
-  const PRODUCTS = [
-    {
-      id: 1,
-      name: "Nike Sneakers",
-      url: require("../../image/bag-yellow.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 2,
-      name: "Nike Sneakers",
-      url: require("../../image/nike-sneaker.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 3,
-      name: "Nike Sneakers",
-      url: require("../../image/card-yellow-show-back.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 4,
-      name: "Nike Sneakers",
-      url: require("../../image/card-yellow.shoe.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 5,
-      name: "Nike Sneakers",
-      url: require("../../image/sneaker-blue.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 6,
-      name: "Nike Sneakers",
-      url: require("../../image/nike-sneaker.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 7,
-      name: "Nike Sneakers",
-      url: require("../../image/sneaker-blue.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 8,
-      name: "Nike Sneakers",
-      url: require("../../image/card-yellow.shoe.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-  ]
+export default function Products({ PRODUCTS }) {
 
   return (
     <ProductList>
@@ -129,13 +63,15 @@ const ProductList = styled.div`
   .cards{
     display: grid;
   padding-bottom: 20px;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
   gap: 34px 16px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
   }
-
 `
 const ProductMenu = styled.ul`
-  width: 627px;
+  max-width: 627px;
   margin: 0 auto 23px;
   display: flex;
   justify-content: space-between;
@@ -157,5 +93,12 @@ const ProductMenu = styled.ul`
     color: var(--blue);
     }
   }
-
+ @media screen and (max-width:430px) {
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   button{
+     margin-bottom: 10px;
+   }
+ }
 `

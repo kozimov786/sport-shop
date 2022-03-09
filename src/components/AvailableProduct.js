@@ -44,6 +44,7 @@ export default function AvailableProduct() {
 
 const Content = styled.div`
 margin-top: -100px;
+width: 100%;
  .available__container{
    display: flex;
 
@@ -55,7 +56,7 @@ margin-top: -100px;
  }
 
  .available__card-title{
-   width: 202px;
+  max-width: 202px;
   font-weight: bold;
   font-size: 20px;
   line-height: 150%;
@@ -93,4 +94,102 @@ margin-top: -100px;
    top: 20px;
    right: 35px;
  }
+ img{
+   width: 100%;
+   height: 100%;
+ }
+ @media screen and (max-width:1200px){
+ .available__red-info{
+   top: 268px;
+ }
+
+ .available-cost{
+  top: 268px;
+ }
+ .available-cost__middle{
+   top: 40px;
+   right: 5px;
+ }
+ }
+ @media screen and (max-width:1114px){
+  .available__card-title{
+   top: 25px;
+   left: 50px;
+   z-index: 0;
+ }
+ .available__bag-info{
+   top: 222px;
+   left: 52px;
+ }
+ .available__red-info{
+   top: 228px;
+   left: 145px;
+ }
+ .available__yellow-info{
+   top: 112px;
+   left: 52px;
+ }
+ .available-cost{
+  top: 218px;
+  right: 13px;
+ }
+ .available-cost__middle{
+   top: 40px;
+   right: 5px;
+ }
+ }
+ @media screen and (max-width:1000px){
+   .available__container{
+     flex-direction: column;
+   }
+   .available__card-title{
+   top: 25px;
+   left: 50px;
+   z-index: 0;
+ }
+ .available__bag-info{
+   top: 128px;
+   left: 50px;
+ }
+ .available__red-info{
+   top: 128px;
+   left: 50px;
+ }
+ .available__yellow-info{
+   top: 112px;
+   left: 52px;
+ }
+ .available-cost{
+  top: 58px;
+  right: 50px;
+ }
+ .available-cost__middle{
+   top: 50px;
+   right: 50px;
+ }
+ }
+ @media screen and (max-width:640px){
+
+ .available__bag-info{
+   top: 78px;
+   left: 50px;
+ }
+ .available__red-info{
+   top: 128px;
+   left: 50px;
+ }
+ .available__yellow-info{
+   top: 112px;
+   left: 52px;
+ }
+ .available-cost{
+  top: 58px;
+  right: 50px;
+ }
+ .available-cost__middle{
+   top: 50px;
+   right: 50px;
+ }
+ }
+
 `

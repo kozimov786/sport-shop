@@ -127,46 +127,78 @@ position: relative;
       left: 30%;
 
    }
+
+
   .nav__dropdown{
-background-color: #fff;
-  filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.102));
-  border-top: 2px solid #F1F3F4;
-   position: absolute;
-   padding: 38px 38px 38px 84px;
-   top: 100%;
-   left: 50%;
-   transform: translateX(-30%);
-   display: flex;
+      background-color: #fff;
+      filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.102));
+      border-top: 2px solid #F1F3F4;
+      position: absolute;
+      padding: 38px 38px 38px 84px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-30%);
+      display: flex;
 
    .nav__menu{
      display: flex;
 
    }
    .nav__dropdown_heading{
-    font-weight: 500;
-font-size: 22px;
-white-space: nowrap;
-line-height: 33px;
-margin-bottom: 12px;
-color: #C1C8CE;
+      font-weight: 500;
+      font-size: 22px;
+      white-space: nowrap;
+      line-height: 33px;
+      margin-bottom: 12px;
+      color: #C1C8CE;
    }
-   ul{
-     width: 138px;
-     margin-right: 20px;
-     display: flex;
-     flex-direction: column;
-     justify-content: start;
-     align-items: start;
-     li{
-       margin-bottom: 10px;
-     }
-     a{
-       white-space: nowrap;
-       color: var(--light-black);
-       font-weight: normal;
-      font-size: 16px;
-      line-height: 24px;
-     }
+
+     ul{
+        width: 138px;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        li{
+            margin-bottom: 10px;
+          }
+        a{
+          white-space: nowrap;
+          color: var(--light-black);
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+        }
+       }
+  }
+      @media screen and (max-width:810px){
+        .nav__dropdown{
+          left: 30%;
+        }
+         .nav__menu{
+           flex-direction:column;
+         }
+         &::before{
+         content: '';
+         top: -5px;
+         left: 10%;
+
    }
- }
+       }
+
+       @media screen and (max-width:710px){
+        .nav__dropdown{
+          width: 100%;
+          padding: 20px;
+          left: 30%;
+          flex-direction:column;
+          ul{
+            width: 100%;
+          }
+        }
+         .nav__menu{
+           flex-direction:column;
+         }
+       }
 `

@@ -16,7 +16,9 @@ const Wrapper = styled.div`
 padding-top: 60px;
 padding-bottom: 95px;
  form{
-   width: 635px;
+   max-width: 675px;
+   padding-left: 20px;
+   padding-right: 20px;
    margin: 0 auto;
    display: flex;
    input{

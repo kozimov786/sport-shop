@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import Review from '../Review';
+import { Link } from 'react-router-dom';
 
 export default function Product({ item }) {
-
 
   return (
     <Card>
       <img src={item.url} alt="sneaker" />
       <div className="card__info">
-        <a className='card__link' href="/">
+        <Link className='card__link' to={`/products/${item.id}`}>
           <h3 className='card__title'>{item.name}</h3>
           <div className='card__overlay'>
             <a href="/">
@@ -21,7 +21,7 @@ export default function Product({ item }) {
               <HiOutlineShoppingCart color='#33A0FF' size={20} />
             </a>
           </div>
-        </a>
+        </Link>
         <div className="card__review" >
           <Review />
         </div>
@@ -30,16 +30,14 @@ export default function Product({ item }) {
           <span className='old-cost'>$ {item.oldCost}</span>
           <span className="sale-cost">{item.sale}% Off</span>
         </div>
-
       </div>
-
     </Card>
   )
 }
 
 
 const Card = styled.div`
- max-width: 301px;
+ width: 100%;
  border: 2px solid #F0F0F0;
  display: inline-block;
  background-color: #F0F0F0;
@@ -47,9 +45,6 @@ const Card = styled.div`
  overflow: hidden;
  border-radius: 10px;
  position: relative;
-
-
-
 
 .card__overlay{
    width: 280px;
@@ -60,6 +55,7 @@ const Card = styled.div`
    height: 200px;
    background-color: rgba(255, 255, 255, 0.95);
    display: none;
+
    a{
      margin: 0 5px;
      width: 51px;
@@ -87,6 +83,7 @@ const Card = styled.div`
  }
  img{
    object-fit: fill;
+   width: 100%;
  }
  .card__info{
    background-color: #fff;

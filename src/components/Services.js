@@ -61,4 +61,11 @@ margin-bottom: 5px;
 color: var(--title-grey);
 
  }
+ @media screen and (max-width:980px) {
+   flex-wrap: wrap;
+   justify-content: center;
+   li{
+     margin: 20px;
+   }
+ }
 `

@@ -55,6 +55,10 @@ padding-bottom: 60px;
 const NewsList = styled.ul`
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width:1170px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `
 const NewsItem = styled.ul`
   display: flex;
@@ -78,5 +82,14 @@ const NewsItem = styled.ul`
       margin-bottom: 0;
       font-family: var(--Nova);
     }
+  }
+  @media screen and (max-width:1170px) {
+    margin: 20px;
+  }
+  @media screen and (max-width:430px) {
+   flex-direction: column;
+   div{
+     margin-top: 20px;
+   }
   }
 `

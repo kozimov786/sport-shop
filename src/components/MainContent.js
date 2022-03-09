@@ -8,7 +8,7 @@ import ProductList from './ProductList'
 import { useSelector, useDispatch } from 'react-redux';
 import { uiActions } from '../Redux/uiSlice'
 
-export default function MainContent() {
+export default function MainContent({ PRODUCTS }) {
 
   const gridShow = useSelector(state => state.ui.gridShow)
   const listShow = useSelector(state => state.ui.listShow)
@@ -23,86 +23,14 @@ export default function MainContent() {
 
   }
 
-  const PRODUCTS = [
-    {
-      id: 1,
-      name: "Nike Sneakers",
-      url: require("../image/bag-yellow.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 2,
-      name: "Nike Sneakers",
-      url: require("../image/nike-sneaker.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 3,
-      name: "Nike Sneakers",
-      url: require("../image/card-yellow-show-back.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 4,
-      name: "Nike Sneakers",
-      url: require("../image/card-yellow.shoe.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 5,
-      name: "Nike Sneakers",
-      url: require("../image/sneaker-blue.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 6,
-      name: "Nike Sneakers",
-      url: require("../image/nike-sneaker.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 7,
-      name: "Nike Sneakers",
-      url: require("../image/sneaker-blue.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 8,
-      name: "Nike Sneakers",
-      url: require("../image/card-yellow.shoe.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-    {
-      id: 9,
-      name: "Nike Sneakers",
-      url: require("../image/card-yellow.shoe.png"),
-      cost: "255",
-      oldCost: "294",
-      sale: "24"
-    },
-  ]
+
   return (
     <Wrapper>
       <div className='main__article'>
         <Article />
       </div>
       <Menu>
+
         <div className='menu__filter'>
           <p><span>13 </span>Items</p>
           <div className='menu__sort'>
@@ -128,6 +56,7 @@ export default function MainContent() {
             </select>
           </div>
         </div>
+
         <div className='menu__icons'>
           <button type='button' onClick={activeGridHandler}>
             <CgMenuGridR size={22} color={gridShow ? "#40BFFF" : "#C1C8CE"} />
@@ -166,10 +95,49 @@ export default function MainContent() {
 const Wrapper = styled.div`
 width: 100%;
 margin-left: 32px;
+@media screen and (max-width:1385px) {
+  .main__article{
+    img{
+      width: 397px;
+    }
+  }
+}
+@media screen and (max-width:1285px) {
+  .article__container{
+    padding-left: 20px;
+  }
+  .article__info{
+    max-width: 300px;
+  }
+}
+@media screen and (max-width:1090px) {
+   margin-left: 0;
+  }
+  @media screen and (max-width:800px) {
+  .main__article{
+    img{
+      width: 397px;
+    }
+  }
+  .article__info{
+    margin-top: 200px;
+  }
+}
+  @media screen and (max-width:630px) {
+   .menu__filter{
+    flex-direction: column;
+    padding-top: 20px;
+   }
+   .main__article{
+    img{
+      width: 297px;
+    }
+  }
+  }
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap:34px;
   margin-bottom: 34px;
 `
@@ -219,7 +187,9 @@ line-height: 19px;
       background-color:#F1F3F4;
     }
   }
-
+  @media screen and (max-width:730px) {
+    flex-direction: column;
+  }
 `
 
 const Pagination = styled.div`
@@ -243,9 +213,14 @@ button{
 .active{
   background-color: #40BFFF;
   color: #fff;
+  &:hover{
+    background-color: #BCDDFE;
+  }
 }
 `
 
 const List = styled.div`
+ height: 1320px;
+ overflow-y: hidden;
 
 `

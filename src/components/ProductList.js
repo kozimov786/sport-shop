@@ -9,7 +9,7 @@ export default function ProductList({ item }) {
   return (
     <List>
       <Item>
-        <img src={item.url} alt="nike" width={300} height={272} />
+        <img className='list__img' src={item.url} alt="nike" width={300} height={272} />
         <Info>
           <h2>{item.name}</h2>
           <div className='reviews'>
@@ -43,12 +43,26 @@ export default function ProductList({ item }) {
 const List = styled.div`
   display: flex;
   flex-direction: column;
+
 `
 const Item = styled.div`
   display: flex;
   padding-bottom: 30px;
   margin-bottom: 26px;
    border-bottom: 2px solid #F6F7F8;
+   @media screen and (max-width:700px) {
+  flex-direction: column;
+  text-align: center;
+  .list__img{
+    margin: 0 auto 20px;
+  }
+  .reviews{
+    justify-content: center;
+  }
+  .actions{
+    justify-content: center;
+  }
+}
 `
 const Info = styled.div`
  margin-left: 15px;

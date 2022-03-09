@@ -8,12 +8,12 @@ import Products from '../components/Products/Products'
 import Search from '../components/Search'
 import Services from '../components/Services'
 
-export default function Home() {
+export default function Home({ PRODUCTS }) {
   return (
     <div>
       <Hero />
       <AvailableProduct />
-      <Products />
+      <Products PRODUCTS={PRODUCTS} />
       <Article />
       <Services />
       <News />
